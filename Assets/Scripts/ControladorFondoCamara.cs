@@ -11,10 +11,15 @@ public class ControladorFondoCamara : MonoBehaviour
 
     void Start()
     {
-        if (fondos.Length == 0) return;
+        if (fondos.Length < 2)
+        {
+            if(fondos[0] == null || fondos[1] == null) return;
+            fondos[0] = this.transform.GetChild(0);
+            fondos[1] = this.transform.GetChild(1);
+        }
 
-        SpriteRenderer sr = fondos[0].GetComponent<SpriteRenderer>();
-        anchoSprite = sr.bounds.size.x;
+        MeshRenderer mr = fondos[0].GetComponent<MeshRenderer>();
+        anchoSprite = mr.bounds.size.x;
 
         float altoCamara = camara.orthographicSize;
         anchoCamara = altoCamara * camara.aspect;
