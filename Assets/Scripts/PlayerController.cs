@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ground Detection")]
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundRadius = 0.2f;
+    [SerializeField] private float groundRadius = 0.4f;
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
